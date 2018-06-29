@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:23.0'
+    testCompile 'junit:junit:4.12'
+}
+
+project.version = '0.0.1-SNAPSHOT'
+
+mainClassName = "Launcher"
+
+jar {
+    baseName = project.name
+    version = project.version
+
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'Launcher'
+        )
+    }
+}
+
+artifacts {
+    archives jar
+}
