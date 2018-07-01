@@ -17,11 +17,11 @@ class DeckReaderTest {
                 Card.create(Suit.HEARTS, Value.QUEEN),
                 Card.create(Suit.SPADES, Value.EIGHT)
         );
-        assertIterableEquals(expectedCards, DeckReader.readCardsFromFile("../../deck"));
+        assertIterableEquals(expectedCards, DeckReader.readCardsFromFile("src/test/resources/deck"));
     }
 
     @Test
     public void shouldReturnEmptyListIfFileIsEmpty() {
-        assertIterableEquals(Collections.EMPTY_LIST, DeckReader.readCardsFromFile("../../emptyDeck"));
+        assertIterableEquals(Collections.EMPTY_LIST, DeckReader.readCardsFromFile("src/test/resources/emptyDeck"));
     }
 }

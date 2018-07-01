@@ -29,3 +29,8 @@ $ java -jar build/libs/blackjack-0.0.1-SNAPSHOT.jar
 ```
 $ java -jar build/libs/blackjack-0.0.1-SNAPSHOT.jar "absolute_file_path"
 ```
+
+### Run tests:
+```
+$ ./gradlew test
+```

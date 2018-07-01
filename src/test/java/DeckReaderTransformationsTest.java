@@ -12,8 +12,8 @@ public class DeckReaderTransformationsTest {
 
     @Test
     public void shouldReadDeckString() {
-        assertEquals("CA, D5, H9, HQ, S8", DeckReaderTransformations.readDeckString("../../deck") );
-        assertEquals("", DeckReaderTransformations.readDeckString("../../emptyDeck"));
+        assertEquals("CA, D5, H9, HQ, S8", DeckReaderTransformations.readDeckString("src/test/resources/deck") );
+        assertEquals("", DeckReaderTransformations.readDeckString("src/test/resources/emptyDeck"));
         assertThrows(RuntimeException.class, () -> DeckReaderTransformations.readDeckString("doesNotExist"));
     }
 
