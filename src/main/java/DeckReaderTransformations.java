@@ -1,11 +1,12 @@
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
 
-public class StringToDeck {
+public class DeckReaderTransformations {
 
     public static String readDeckString(final String file) {
         try {
@@ -19,7 +20,7 @@ public class StringToDeck {
     }
 
     public static List<String> splitDeckStringIntoValues(final String deckString) {
-        return asList(deckString.split(", "));
+        return deckString.isEmpty() ? new ArrayList<>() : asList(deckString.split(", "));
     }
 
     public static Card translateValueIntoCard(final String cardString) {

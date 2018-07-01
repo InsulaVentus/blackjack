@@ -20,7 +20,7 @@ public class BlackjackHand {
         return new BlackjackHand(cards);
     }
 
-    public static BlackjackHand create() {
+    public static BlackjackHand createEmpty() {
         return new BlackjackHand(new LinkedList<>());
     }
 
@@ -38,6 +38,7 @@ public class BlackjackHand {
         return cards
                 .stream()
                 .map(Card::toString)
-                .reduce("", (x, y) -> String.format("%s, %s", x, y));
+                .reduce((x, y) -> String.format("%s, %s", x, y))
+                .orElse("");
     }
 }
